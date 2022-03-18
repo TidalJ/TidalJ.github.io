@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>md基础语法</title>
+    <title>Simple MarkDown</title>
     <url>/posts/e695.html</url>
     <content><![CDATA[<h1 id="markdown-快速入门"><a href="#markdown-快速入门" class="headerlink" title="markdown 快速入门"></a>markdown 快速入门</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h3 id="标题-1"><a href="#标题-1" class="headerlink" title="标题"></a>标题</h3><h4 id="标题-2"><a href="#标题-2" class="headerlink" title="标题"></a>标题</h4><h5 id="标题-3"><a href="#标题-3" class="headerlink" title="标题"></a>标题</h5><h6 id="标题-4"><a href="#标题-4" class="headerlink" title="标题"></a>标题</h6><h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1><p><strong>加粗</strong></p>
 <p>&#x3D;&#x3D;李白&#x3D;&#x3D;</p>
@@ -95,6 +95,44 @@
     <content><![CDATA[<h1 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h1><h2 id="什么是盒子模型"><a href="#什么是盒子模型" class="headerlink" title="什么是盒子模型"></a>什么是盒子模型</h2><p>1.margin：外边距<br>2.border：边框<br>3.padding：内边距</p>
 <h2 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h2><p>1.边框的样式</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>DOM Element</title>
+    <url>/posts/5958.html</url>
+    <content><![CDATA[<h2 id="createElement"><a href="#createElement" class="headerlink" title="createElement"></a>createElement</h2><hr>
+<p>createElement 可以创建元素</p>
+<p>一般用法</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> a = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;Tag_name&quot;</span>);<br><span class="hljs-comment">// 创建名为Tag_name的标签元素</span><br></code></pre></td></tr></table></figure>
+<p>如添加一个p标签</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> p = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;p&quot;</span>);<br></code></pre></td></tr></table></figure>
+<p>如添加一个div标签</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> div = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;div&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="append"><a href="#append" class="headerlink" title="append"></a>append</h2><hr>
+<p>append 可以在元素末尾添加元素。</p>
+<p>一般用法</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">element.<span class="hljs-title function_">append</span>(<span class="hljs-string">&quot;追加文本，子节点&quot;</span>);<br></code></pre></td></tr></table></figure>
+<p>如为p追加子节点文本</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">p.<span class="hljs-title function_">append</span>(<span class="hljs-string">&quot;追加文本，子节点&quot;</span>);<br></code></pre></td></tr></table></figure>
+<p>如为div追加p元素</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">div.<span class="hljs-title function_">append</span>(p);<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="setAttribute"><a href="#setAttribute" class="headerlink" title="setAttribute"></a>setAttribute</h2><hr>
+<p>setAttribute 可以给元素添加属性，若已经有属性，则更改属性。</p>
+<p>一般用法</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">element.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&quot;attribute_name&quot;</span>,<span class="hljs-string">&quot;attribute_value&quot;</span>);<br></code></pre></td></tr></table></figure>
+<p>如添加或修改类</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">element.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&quot;class&quot;</span>,<span class="hljs-string">&quot;post-time&quot;</span>);<br><span class="hljs-comment">// 第一个参数为添加的属性的类型，第二个参数为类名</span><br></code></pre></td></tr></table></figure>
+<p>如添加或修改CSS文本样式</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">element.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&quot;style&quot;</span>,<span class="hljs-string">&quot;font-weight: bold;&quot;</span>);<br><span class="hljs-comment">// 添加字体样式为加粗</span><br>element.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&quot;style&quot;</span>,<span class="hljs-string">&quot;font-style: italic;&quot;</span>);<br><span class="hljs-comment">// 修改字体样式为斜体</span><br></code></pre></td></tr></table></figure>
+
+<hr>
+]]></content>
+      <tags>
+        <tag>js</tag>
+      </tags>
   </entry>
   <entry>
     <title>选择器</title>
