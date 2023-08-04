@@ -71,7 +71,7 @@
             deltaY = 0,
             deltaZ = 0;
 
-        if ((this.lastX === null) && (this.lastY === null) && (this.lastZ === null)) {
+        if ((this.lastX === null) &amp;&amp; (this.lastY === null) &amp;&amp; (this.lastZ === null)) {
             this.lastX = current.x;
             this.lastY = current.y;
             this.lastZ = current.z;
@@ -82,12 +82,12 @@
         deltaY = Math.abs(this.lastY - current.y);
         deltaZ = Math.abs(this.lastZ - current.z);
 
-        if (((deltaX > this.threshold) && (deltaY > this.threshold)) || ((deltaX > this.threshold) && (deltaZ > this.threshold)) || ((deltaY > this.threshold) && (deltaZ > this.threshold))) {
+        if (((deltaX &gt; this.threshold) &amp;&amp; (deltaY &gt; this.threshold)) || ((deltaX &gt; this.threshold) &amp;&amp; (deltaZ &gt; this.threshold)) || ((deltaY &gt; this.threshold) &amp;&amp; (deltaZ &gt; this.threshold))) {
             //calculate time in milliseconds since last shake registered
             currentTime = new Date();
             timeDifference = currentTime.getTime() - this.lastTime.getTime();
 
-            if (timeDifference > 1000) {
+            if (timeDifference &gt; 1000) {
                 window.dispatchEvent(this.event);
                 this.lastTime = new Date();
             }
@@ -109,6 +109,6 @@
 
     //create a new instance of shake.js.
     var myShakeEvent = new Shake();
-    myShakeEvent && myShakeEvent.start();
+    myShakeEvent &amp;&amp; myShakeEvent.start();
 
 }(window, document));

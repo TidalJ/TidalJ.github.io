@@ -25,10 +25,10 @@
       }
       this.element.innerHTML = msg;
       diff = score.Home - score.Guest;
-      if (diff > 15) {
+      if (diff &gt; 15) {
         alert("Home Win!");
         return location.reload();
-      } else if (diff < -15) {
+      } else if (diff &lt; -15) {
         alert("Guest Win!");
         return location.reload();
       } else {

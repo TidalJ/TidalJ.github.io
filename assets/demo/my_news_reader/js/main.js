@@ -7,8 +7,8 @@ var tagElems = [];
 (function() {
 	function ranOrNot(e, t) {
 		var n = [];
-		typeof t == "undefined" && (t = e, e = 0);
-		for (; e < t; e++) n.push(e);
+		typeof t == "undefined" &amp;&amp; (t = e, e = 0);
+		for (; e &lt; t; e++) n.push(e);
 		return n
 	}
 	Array.prototype.randomEach = function(t) {
@@ -25,14 +25,14 @@ var tagElems = [];
 		var t = this.length;
 		if (typeof e != "function") throw new TypeError;
 		var n = arguments[1];
-		for (var r = 0; r < t; r++) r in this && e.call(n, this[r], r, this)
+		for (var r = 0; r &lt; t; r++) r in this &amp;&amp; e.call(n, this[r], r, this)
 	})
 } )();
 
 
 function _shadowClone(e) {
 	var t = {};
-	for (var n in e) e.hasOwnProperty(n) && (t[n] = e[n]);
+	for (var n in e) e.hasOwnProperty(n) &amp;&amp; (t[n] = e[n]);
 	return t;
 }
 function attrStyle(elem,attr){
@@ -40,7 +40,7 @@ function attrStyle(elem,attr){
         return elem.style[attr];
     }else if(elem.currentStyle){
         return elem.currentStyle[attr];
-    }else if(document.defaultView && document.defaultView.getComputedStyle){
+    }else if(document.defaultView &amp;&amp; document.defaultView.getComputedStyle){
         attr=attr.replace(/([A-Z])/g,'-$1').toLowerCase();
         return document.defaultView.getComputedStyle(elem,null).getPropertyValue(attr);
     }else{
@@ -70,7 +70,7 @@ AutoLoader.prototype._load = function() {
 AutoLoader.prototype.get = function() {
 	var e;
 	clearTimeout(this._loading);
-	this._pool.length > 0 ? e = this._pool.pop() : e = this._generator.apply(this._context);
+	this._pool.length &gt; 0 ? e = this._pool.pop() : e = this._generator.apply(this._context);
 	return e;
 }
 
