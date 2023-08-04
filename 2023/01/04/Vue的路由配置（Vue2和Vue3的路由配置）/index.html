@@ -1,0 +1,118 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>Vue的路由配置（Vue2和Vue3的路由配置）</title><meta name="description" content="Living in the moment"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Chao Jiang's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article id="page"><h1>Vue的路由配置（Vue2和Vue3的路由配置）</h1><h1 id="系列文章目录"><a href="#系列文章目录" class="headerlink" title="系列文章目录"></a>系列文章目录</h1><p><code>Tips：使用Vue3开发项目已经有一段时间了，关于Vue2的路由是如何一步一步搭建的都快要忘记了，今天写着篇文章主要就是回顾一下，在Vue2和Vue3中我们是如何一步一步的配置路由的。</code></p>
+<hr>
+<p><code>提示：最好的进步就是有闲暇时间就敲一敲代码！！！！！</code></p>
+<h3 id="文章目录"><a href="#文章目录" class="headerlink" title="文章目录"></a>文章目录</h3><ul>
+<li><a href="#%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">系列文章目录</a><ul>
+<li><a href="#%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">文章目录</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%80%E8%B7%AF%E7%94%B1%E6%98%AF%E4%BB%80%E4%B9%88">一、路由是什么？</a></li>
+<li><a href="#%E4%BA%8Cvue2%E4%B8%AD%E8%B7%AF%E7%94%B1%E7%9A%84%E5%88%9B%E5%BB%BA%E6%AD%A5%E9%AA%A4">二、Vue2中路由的创建步骤</a><ul>
+<li><a href="#1%E5%AE%89%E8%A3%85%E6%AD%A3%E7%A1%AE%E7%9A%84%E8%B7%AF%E7%94%B1%E7%89%88%E6%9C%AC%E8%BF%99%E9%87%8C%E6%88%91%E8%B8%A9%E5%9D%91%E4%BA%86">1.安装正确的路由版本（这里我踩坑了）</a></li>
+<li><a href="#2vue2%E4%B8%AD%E9%85%8D%E7%BD%AE%E8%B7%AF%E7%94%B1%E7%9A%84%E6%AD%A5%E9%AA%A4">2.vue2中配置路由的步骤</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89vue3%E4%B8%AD%E8%B7%AF%E7%94%B1%E7%9A%84%E5%88%9B%E5%BB%BA%E6%AD%A5%E9%AA%A4">三、Vue3中路由的创建步骤</a><ul>
+<li><a href="#1%E6%AD%A5%E9%AA%A4%E5%A6%82%E4%B8%8B">1.步骤如下</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="一、路由是什么？"><a href="#一、路由是什么？" class="headerlink" title="一、路由是什么？"></a>一、路由是什么？</h1><blockquote>
+<p><code>Vue</code>中的路由就是.<code>SPA（single page application 单页应用程序）</code> 的路径管理器。</p>
+<p><code>vue-router</code>是Vue.js官方的路由插件，用于构建单页面应用。vue的单页面应用是基于<code>路由</code>和<code>组件</code>的，<code>设定访问路径，并将路径和组件映射起来</code>。在<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=vue-router&amp;spm=1001.2101.3001.7020">vue-router</a>单页面应用中，<code>路径之间的切换，就是组件的切换</code>。路由模块的本质就是建立起url和页面之间的映射关系。</p>
+</blockquote>
+<h1 id="二、Vue2中路由的创建步骤"><a href="#二、Vue2中路由的创建步骤" class="headerlink" title="二、Vue2中路由的创建步骤"></a>二、<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Vue2&amp;spm=1001.2101.3001.7020">Vue2</a>中路由的创建步骤</h1><h2 id="1-安装正确的路由版本（这里我踩坑了）"><a href="#1-安装正确的路由版本（这里我踩坑了）" class="headerlink" title="1.安装正确的路由版本（这里我踩坑了）"></a>1.安装正确的路由版本（这里我踩坑了）</h2><p><code>1.首先安装vue-router的时候需要确定版本。 Vue2.0采用的 vue-router 版本为 @^3.5.1</code></p>
+<pre><code>npm i vue-router@^3.5.1 -s  // Vue2安装的方式
+</code></pre>
+<p><code>2.直接 npm i vue-router -s 这种方式安装会安装最新版本（适用于Vue3）</code></p>
+<pre><code>npm i vue-router -s  //Vue3安装的方式
+</code></pre>
+<h2 id="2-vue2中配置路由的步骤"><a href="#2-vue2中配置路由的步骤" class="headerlink" title="2.vue2中配置路由的步骤"></a>2.vue2中配置路由的步骤</h2><blockquote>
+<h3 id="步骤如下："><a href="#步骤如下：" class="headerlink" title="步骤如下："></a>步骤如下：</h3></blockquote>
+<p><code>1.安装 vue-router@3.5.1</code><br><code>2.创建 router文件夹 并创建 index.js</code><br><code>3.引入VueRouter 和 Vue</code><br><code>4.Vue.use(VueRouter)</code><br><code>5.创建VueRouter实例： const router = new VueRouter（{ routes}）</code><br><code>6.配置routes （结构如下图所示）</code><br><code>7.导出router</code><br><code>8. 在main.js中导入刚才的 router</code><br><code>9.注册router</code><br><code>10.创建 router-link 和 router-view</code></p>
+<blockquote>
+<p><code>路由文件代码：</code></p>
+</blockquote>
+<pre><code>//1.导入VueRouter
+import Vue from "vue";
+import VueRouter from 'vue-router'
+import HelloWord from "../components/HelloWorld.vue";
+//2.使用路由
+Vue.use(VueRouter);
+//3.创建VueRouter的实例
+const router = new VueRouter({
+    //tips:不想要 #（锚点）就添加下面代码
+     mode:'history', 
+    //4.配置路由的path和组件
+    routes :[
+        {
+          path: "/",
+          name:'home',
+          component: HelloWord,
+        },
+        {
+          path: "/about",
+          name:'anout',
+          component: () =&gt; import("../components/About.vue"),
+        },
+      ]
+})
+//5.导入路由实例
+export default router
+</code></pre>
+<blockquote>
+<p><code>入口文件代码：</code></p>
+</blockquote>
+<pre><code>import Vue from 'vue'
+import App from './App.vue'
+//6.引入导出的路由
+import router from './router/index'
+
+Vue.config.productionTip = false
+
+new Vue({
+  //7.注册路由
+  router,
+  render: h =&gt; h(App),
+}).$mount('#app')
+</code></pre>
+<h1 id="三、Vue3中路由的创建步骤"><a href="#三、Vue3中路由的创建步骤" class="headerlink" title="三、Vue3中路由的创建步骤"></a>三、<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Vue3&amp;spm=1001.2101.3001.7020">Vue3</a>中路由的创建步骤</h1><h2 id="1-步骤如下"><a href="#1-步骤如下" class="headerlink" title="1.步骤如下"></a>1.步骤如下</h2><p><code>1. 创建对应的文件夹router 创建 index.js文件，</code><br><code>2. 安装vue-router （vue3.0直接安装就行）</code><br><code>3. 导入createRouter 和 createWebHashHistory</code><br><code>4. 配置routes</code><br><code>5. 使用createRouter注册routes和配置路由模式</code><br><code>6. 导出路由</code><br><code>7. 在main.js中 导入router ，并通过链式 .use(router) 注册</code></p>
+<blockquote>
+<p><code>路由文件代码：</code></p>
+</blockquote>
+<pre><code>import { createRouter, createWebHashHistory } from "vue-router";
+
+ import HelloWord from '../components/HelloWorld.vue'
+
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes: [
+    {
+      path: "/",
+      component:HelloWord
+    },
+    {
+        path:"/about",
+        component:() =&gt; import("../components/About.vue")
+    }
+  ],
+});
+
+export default router
+</code></pre>
+<blockquote>
+<p><code>入口文件代码：</code></p>
+</blockquote>
+<pre><code>import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+
+createApp(App).use(router).mount('#app')
+</code></pre>
+<hr>
+</article><div id="paginator"></div></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/TidalJ"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com/tidaljay727/"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><a title="linkedin" target="_blank" rel="noopener nofollow" href="//www.linkedin.com/in/chaojiang777/"><i class="iconfont icon-linkedin"></i></a><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com/profile.php?id=100049727556677"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Chao Jiang 2023</span></p></footer></body></html>
