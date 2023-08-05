@@ -1,0 +1,78 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>Unreal Engine</title><meta name="description" content="Living in the moment"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Chao Jiang's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article id="page"><h1>Unreal Engine</h1><h1>【学习笔记】Unreal（虚幻）4引擎入门（一）</h1>
+
+<hr> 
+<p style="text-indent:33px;"><strong>今天是第一篇，从安装、启动到第一个教学工程。</strong></p> 
+<h2><a name="t0"></a>安装</h2> 
+<p style="text-indent:33px;">虚幻引擎安装很便利，使用Epic游戏平台即可下载安装。得益于腾讯注资了Epic，国内服务器下载速度杠杠快，虚幻4的4.25.3版本大小11GB左右，我的下载速度基本上在5-6M/S。</p> 
+<p style="text-indent:33px;">下图就是Epic的游戏平台，左侧点击虚幻引擎，下载安装即可，下载完右上角黄色按钮启动，或者桌面快捷方式启动。</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/2020082622502384.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<h2><a name="t1"></a>启动和第一个教学工程</h2> 
+<p style="text-indent:33px;">启动虚幻引擎后，会出现如下图的界面。可以按照自己的需要选择不同的大类。跟随虚幻4的<a target="_blank" rel="noopener" href="https://docs.unrealengine.com/zh-CN/Engine/QuickStart/index.html">官方教程</a>，这里选择游戏大类。</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/2020082622532020.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">随后便弹出项目浏览器界面，如下图所示。按照教程的指导，选择蓝图（目前的理解类似于使用模板，而不是C++代码来构建，适合没有编程经验的开发者直接上手）和包含初学者内容包（这里包含了一些设定好的家具、素材贴图等）。同时选择项目保存地址和项目名称。</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826225615477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">点击创建项目后，便是漫长的加载过程。</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826225842959.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">加载完成后，会弹出初始界面：</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826225918748.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">初始界面中已经有了一个样例场景，就是上图的座椅和地面。我们需要从头来过，那就点击上图左上角的文件，创建新关卡，选择空白关卡即可：</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826230058511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">空白关卡建立好后，界面中的视口（就是显示座椅板凳的地方会变成漆黑一片），就需要我们添加所需的部件。比如添加一个正方形，通过调整它的角度及宽高比，让它变成地面部件：</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826230339526.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826230404407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">同理，有了地面，添加光源可以加入点光源或者定向光源（我的理解类似于太阳光），以及不同的小部件，如椅子桌子等。然后通过点击单个物品可以旋转（E），平移（W）和缩放（R），将它们放置到我们需要的地方。</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826230852344.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">而视口中的快捷操作如下图：</p> 
+<p style="text-indent:33px;"><img alt="" height="773" src="https://img-blog.csdnimg.cn/20200826230825138.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70" width="685"></p> 
+<p style="text-indent:33px;">按照教程布置完成后，我们有了如下的场景，一个漏风的破房：</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826230953590.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">随后通过添加贴图，玩家出生点，调整光源等亿点点的细节后，就可以开始Build这个工程了，Build过程中会将静态的未经烘焙的光源进行实时运算：</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826231112144.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">最后点击运行，就可以通过WSAD和鼠标在构建的场景里面游览了：</p> 
+<p style="text-align:center;"><img alt="" height="461" src="https://img-blog.csdnimg.cn/20200826231504406.gif" width="817"></p> 
+<p style="text-indent:33px;">最后，感叹虚幻引擎的强大，而且虚幻5马上要和大家见了。可以用第九艺术实现自己的梦，真的太美妙！</p>
+                <div data-report-view="{&quot;mod&quot;:&quot;1585297308_001&quot;,&quot;spm&quot;:&quot;1001.2101.3001.6548&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/yourgreatfather/article/details/108249291&quot;,&quot;extend1&quot;:&quot;pc&quot;,&quot;ab&quot;:&quot;new&quot;}"><div></div></div>
+        ](<div id="article_content" class="article_content clearfix">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/kdoc_html_views-1a98987dfd.css">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/ck_htmledit_views-25cebea3f9.css">
+                <div id="content_views" class="htmledit_views">
+                    <p style="text-indent:33px;">刚入职新工作一个多月，目前不算太忙，晚上在家浪费时间心里难安。介于本人热爱游戏，最近闲来无事自学虚幻4引擎，若能坚持下去，希望有朝一日可以自己做出一款游戏（想吃屁）。</p> 
+<hr> 
+<p style="text-indent:33px;"><strong>今天是第一篇，从安装、启动到第一个教学工程。</strong></p> 
+<h2><a name="t0"></a>安装</h2> 
+<p style="text-indent:33px;">虚幻引擎安装很便利，使用Epic游戏平台即可下载安装。得益于腾讯注资了Epic，国内服务器下载速度杠杠快，虚幻4的4.25.3版本大小11GB左右，我的下载速度基本上在5-6M/S。</p> 
+<p style="text-indent:33px;">下图就是Epic的游戏平台，左侧点击虚幻引擎，下载安装即可，下载完右上角黄色按钮启动，或者桌面快捷方式启动。</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/2020082622502384.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<h2><a name="t1"></a>启动和第一个教学工程</h2> 
+<p style="text-indent:33px;">启动虚幻引擎后，会出现如下图的界面。可以按照自己的需要选择不同的大类。跟随虚幻4的<a target="_blank" rel="noopener" href="https://docs.unrealengine.com/zh-CN/Engine/QuickStart/index.html">官方教程</a>，这里选择游戏大类。</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/2020082622532020.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">随后便弹出项目浏览器界面，如下图所示。按照教程的指导，选择蓝图（目前的理解类似于使用模板，而不是C++代码来构建，适合没有编程经验的开发者直接上手）和包含初学者内容包（这里包含了一些设定好的家具、素材贴图等）。同时选择项目保存地址和项目名称。</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826225615477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">点击创建项目后，便是漫长的加载过程。</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826225842959.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">加载完成后，会弹出初始界面：</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826225918748.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">初始界面中已经有了一个样例场景，就是上图的座椅和地面。我们需要从头来过，那就点击上图左上角的文件，创建新关卡，选择空白关卡即可：</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826230058511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">空白关卡建立好后，界面中的视口（就是显示座椅板凳的地方会变成漆黑一片），就需要我们添加所需的部件。比如添加一个正方形，通过调整它的角度及宽高比，让它变成地面部件：</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826230339526.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826230404407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">同理，有了地面，添加光源可以加入点光源或者定向光源（我的理解类似于太阳光），以及不同的小部件，如椅子桌子等。然后通过点击单个物品可以旋转（E），平移（W）和缩放（R），将它们放置到我们需要的地方。</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826230852344.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">而视口中的快捷操作如下图：</p> 
+<p style="text-indent:33px;"><img alt="" height="773" src="https://img-blog.csdnimg.cn/20200826230825138.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70" width="685"></p> 
+<p style="text-indent:33px;">按照教程布置完成后，我们有了如下的场景，一个漏风的破房：</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826230953590.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">随后通过添加贴图，玩家出生点，调整光源等亿点点的细节后，就可以开始Build这个工程了，Build过程中会将静态的未经烘焙的光源进行实时运算：</p> 
+<p style="text-align:center;"><img alt="" src="https://img-blog.csdnimg.cn/20200826231112144.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lvdXJncmVhdGZhdGhlcg==,size_16,color_FFFFFF,t_70"></p> 
+<p style="text-indent:33px;">最后点击运行，就可以通过WSAD和鼠标在构建的场景里面游览了：</p> 
+<p style="text-align:center;"><img alt="" height="461" src="https://img-blog.csdnimg.cn/20200826231504406.gif" width="817"></p> 
+<p style="text-indent:33px;">最后，感叹虚幻引擎的强大，而且虚幻5马上要和大家见了。可以用第九艺术实现自己的梦，真的太美妙！</p>
+                </div><div data-report-view="{&quot;mod&quot;:&quot;1585297308_001&quot;,&quot;spm&quot;:&quot;1001.2101.3001.6548&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/yourgreatfather/article/details/108249291&quot;,&quot;extend1&quot;:&quot;pc&quot;,&quot;ab&quot;:&quot;new&quot;}"><div></div></div>
+        </div>)
+
+</article><div id="paginator"></div></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/TidalJ"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com/tidaljay727/"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><a title="linkedin" target="_blank" rel="noopener nofollow" href="//www.linkedin.com/in/chaojiang777/"><i class="iconfont icon-linkedin"></i></a><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com/profile.php?id=100049727556677"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Chao Jiang 2023</span></p></footer></body></html>
